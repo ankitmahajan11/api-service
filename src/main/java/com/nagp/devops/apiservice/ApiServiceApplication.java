@@ -12,6 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 //@EnableJpaRepositories("com.nagp.devops.apiservice")
 public class ApiServiceApplication {
     public static void main(String[] args) {
+        System.out.println("inside main method");
         SpringApplication.run(ApiServiceApplication.class, args);
     }
 

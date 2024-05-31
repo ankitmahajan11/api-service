@@ -4,12 +4,16 @@ server:
     context-path: /api-service
 
 
-#spring:
- # datasource:
-  #  url: 'jdbc:sqlserver://sql-azu-e2-acs-dev-raiq.database.windows.net:1433;database=sql-azu-e2-acs-dev-raiq-hrms-nonprod;user=${devDbUser}@sql-azu-e2-acs-dev-raiq;password={${devDbPassword}};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;'
-   # driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    #username: ${devDbUser}
-    #password: ${devDbPassword}
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+  datasource:
+    url: 'jdbc:mysql://169.254.169.254:3306/mysql'
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username:
+    password: password
 
 logging:
   level:

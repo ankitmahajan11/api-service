@@ -13,8 +13,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     public List<EmployeeDto> get() {
         return List.of(EmployeeDto.builder()
                 .id("3197763")
-                .name("Ankit Mahajan")
-                .contactNumber("9340204117")
+                .name("Ankita Gupta")
+                .contactNumber("989377093")
                 .designation("Staff Engineer")
                 .build());
     }
