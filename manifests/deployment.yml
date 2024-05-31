@@ -1,0 +1,27 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: app-server
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app-server
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: app-server
+    spec:
+      containers:
+        - name: nagp-api-service
+          image: ankitmahajan11/nagp-assignment/api-service:v1
+          ports:
+            - containerPort: 9030
+          resources:
+            limits:
+              memory: "128Mi"
