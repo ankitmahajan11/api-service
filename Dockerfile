@@ -1,6 +1,6 @@
 FROM amazoncorretto:17
 
-ADD ./target/api-service-1.0.0-SNAPSHOT.jar /var/lib/service.jar
+ADD ./target/nagp-api-service-1.0.0.SNAPSHOT.jar /var/lib/service.jar
 
 EXPOSE 9030
 
