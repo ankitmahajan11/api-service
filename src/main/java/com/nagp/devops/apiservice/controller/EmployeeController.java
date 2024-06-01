@@ -22,6 +22,7 @@ public class EmployeeController {
     @GetMapping(produces = "application/json")
     public List<EmployeeDto> get(){
         System.out.println("getting employee details");
+        System.out.println("Adding more logger to show rolling updates in V13");
         return service.get();
     }
 }
