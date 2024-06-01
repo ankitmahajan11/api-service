@@ -5,7 +5,8 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-      - port: 9030
+      - port: 80
+        targetPort: 9030
   selector:
     app: app-server
 
