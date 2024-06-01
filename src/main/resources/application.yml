@@ -9,9 +9,9 @@ spring:
       show-sql: true
     dialect: org.hibernate.dialect.MySQL5Dialect
   datasource:
-    url: jdbc:mysql://mysql-nagp:3306/demoDb
-    username: myUser
-    password: cGFzc3dvcmQ=
+    url: jdbc:mysql://${DB_SERVER}:3306/${DB_NAME}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
 
 logging:
   level:

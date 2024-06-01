@@ -19,9 +19,30 @@ spec:
     spec:
       containers:
         - name: nagp-api-service
-          image: ankitmahajan11/nagp-assignment:v10
+          image: ankitmahajan11/nagp-assignment:v12
           ports:
             - containerPort: 9030
           resources:
             limits:
               memory: "128Mi"
+          env:
+          - name: DB_SERVER
+            valueFrom:
+              configMapKeyRef:
+                  name: mysql-config-map
+                  key: mysql-server
+          - name: DB_NAME
+            valueFrom:
+                  configMapKeyRef:
+                    name: mysql-config-map
+                    key: mysql-database-name
+          - name: DB_PASSWORD
+            valueFrom:
+                  secretKeyRef:
+                    name: mysql-password
+                    key: mysql-user-password
+          - name: DB_USERNAME
+            valueFrom:
+              configMapKeyRef:
+                name: mysql-config-map
+                key: mysql-user-username
