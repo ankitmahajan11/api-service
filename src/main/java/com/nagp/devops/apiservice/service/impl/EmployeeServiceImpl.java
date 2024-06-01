@@ -15,8 +15,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Autowired
     private EmployeeRepository employeeRepository;
+
     @Override
     public List<EmployeeDto> get() {
+        System.out.println("at service layer to get employee details");
         List<EmployeeDto> result = new ArrayList<>();
         employeeRepository.findAll().forEach(employee -> result.add(EmployeeDto.builder()
                 .id(employee.getId())

@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: nagp-api-service
-          image: ankitmahajan11/nagp-assignment:v6
+          image: ankitmahajan11/nagp-assignment:v10
           ports:
             - containerPort: 9030
           resources:

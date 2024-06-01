@@ -1,35 +1,50 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: mysql
+  name: mysql-nagp
 spec:
   replicas: 1
-  serviceName: mysql
+  serviceName: mysql-nagp
   selector:
     matchLabels:
-      app: mysql
+      app: mysql-nagp
   template:
     metadata:
       labels:
-        app: mysql
+        app: mysql-nagp
     spec:
       terminationGracePeriodSeconds: 10
       containers:
-        - name: mysql
+        - name: mysql-nagp
           image: mysql:5.6
           ports:
             - name: tpc
               protocol: TCP
               containerPort: 3306
           env:
+            - name: MYSQL_DATABASE
+              valueFrom:
+                  configMapKeyRef:
+                    name: mysql-config-map
+                    key: mysql-database-name
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
-                secretKeyRef:
-                  key: MYSQL_ROOT_PASSWORD
-                  name: mysql-password
+                  secretKeyRef:
+                    name: mysql-password
+                    key: mysql-root-password
+            - name: MYSQL_USER
+              valueFrom:
+                  configMapKeyRef:
+                    name: mysql-config-map
+                    key: mysql-user-username
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                  secretKeyRef:
+                    name: mysql-password
+                    key: mysql-user-password
           volumeMounts:
             - name: pvc
-              mountPath: /var/lib/mysql
+              mountPath: /var/lib/nagp
   volumeClaimTemplates:
     - metadata:
         name: pvc

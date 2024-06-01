@@ -2,8 +2,6 @@ server:
   port: 9030
   servlet:
     context-path: /api-service
-
-
 spring:
   jpa:
     hibernate:
@@ -11,9 +9,9 @@ spring:
       show-sql: true
     dialect: org.hibernate.dialect.MySQL5Dialect
   datasource:
-    url: jdbc:mysql://mysql:3306/demo
-    username: root
-    password: password
+    url: jdbc:mysql://mysql-nagp:3306/demoDb
+    username: myUser
+    password: cGFzc3dvcmQ=
 
 logging:
   level:

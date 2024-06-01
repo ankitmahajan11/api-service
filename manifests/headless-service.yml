@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mysql
+  name: mysql-nagp
   labels:
-    app: mysql
+    app: mysql-nagp
 spec:
   clusterIP: None
   selector:
-    app: mysql
+    app: mysql-nagp
   ports:
     - name: tcp
       protocol: TCP
