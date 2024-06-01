@@ -9,10 +9,10 @@ spring:
     hibernate:
       ddl-auto: update
       show-sql: true
+    dialect: org.hibernate.dialect.MySQL5Dialect
   datasource:
-    url: 'jdbc:mysql://169.254.169.254:3306/mysql'
-    driverClassName: com.mysql.cj.jdbc.Driver
-    username:
+    url: jdbc:mysql://mysql:3306/demo
+    username: root
     password: password
 
 logging:
