@@ -5,6 +5,9 @@ Docker Image tag in Use: v13
 URL for api-service: http://35.225.250.174/api-service/employee
 link for screen recording: 
 
-Note: Yaml files are inside the manifests folder of same repository.
-Dockerfile is directly present in api-service spring boot project
+Note: 
+1) Yaml files are inside the manifests folder of same repository.
+2) Dockerfile is directly present in api-service spring boot project
+3) service is written in java+springboot
+4) DB used is mysql as a statefulset
 
