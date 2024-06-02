@@ -44,7 +44,7 @@ spec:
                     key: mysql-user-password
           volumeMounts:
             - name: pvc
-              mountPath: /var/lib/nagp
+              mountPath: /var/lib/mysql
   volumeClaimTemplates:
     - metadata:
         name: pvc
